@@ -38,7 +38,7 @@ RadialPlacement = () ->
     current += increment
     value
 
-   # Given a set of keys, perform some 
+   # Given a set of keys, perform some
   # magic to create a two ringed radial layout.
   # Expects radius, increment, and center to be set.
   # If there are a small number of keys, just make
@@ -46,7 +46,7 @@ RadialPlacement = () ->
   setKeys = (keys) ->
     # start with an empty values
     values = d3.map()
-  
+
     # number of keys to go in first circle
     firstCircleCount = 360 / increment
 
@@ -192,7 +192,7 @@ Network = () ->
       # other layouts. updateLinks() will be called when
       # force is done animating.
       force.links([])
-      # if present, remove them from svg 
+      # if present, remove them from svg
       if link
         link.data([]).exit().remove()
         link = null
@@ -472,7 +472,7 @@ Network = () ->
       if (n.searched or neighboring(d, n)) then "#555" else strokeFor(n))
       .style("stroke-width", (n) ->
         if (n.searched or neighboring(d, n)) then 2.0 else 1.0)
-  
+
     # highlight the node being moused over
     d3.select(this).style("stroke","black")
       .style("stroke-width", 2.0)
@@ -517,7 +517,7 @@ $ ->
     songFile = $(this).val()
     d3.json "data/#{songFile}", (json) ->
       myNetwork.updateData(json)
-  
+
   $("#search").keyup () ->
     searchTerm = $(this).val()
     myNetwork.updateSearch(searchTerm)
